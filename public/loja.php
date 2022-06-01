@@ -1,5 +1,4 @@
 <?php
-    use Database\Database;
 
  if( isset($_POST['email'])) {
     $email = $_POST['email'];
@@ -12,30 +11,6 @@ if(isset($_POST['pass'])) {
     $pass = null;
 }
 // o if faz com que, caso nao receba nenhum dado post, no caso cliclando como visitante, ele trata o post como nulo
-
-
-/////////////////////////////////////////////////////////////////////////
-
-// require_once "../src/model/Database.php";
-// $db = new Database();
-
-// $resultDb = $db->select(
-  //  "SELECT * FROM usuarios WHERE email = '$email'; "
-//);
-
-//var_dump($resultDb);
-
-if( isset($resultDb[0]) ) {
-    $emailDb = $resultDb[0]->email;
-    $senhaDb = $resultDb[0]->senha;
-} else {
-    $emailDb = null;
-    $senhaDb = null;
-}
-
-//var_dump($resultDb[0]);
-
-//////////////////////////////////////////////////////////////////////////
 
 
 
@@ -51,6 +26,7 @@ if($email != null && $pass != null) {
 }
 
 
+
 // puxando navbar com php 
 require_once "../src/views/header_nav.php";
 ?>
@@ -60,9 +36,10 @@ require_once "../src/views/header_nav.php";
     </h1>
     <?= (isset($redirect) ? $redirect : "<hr>")?>
 
- <form action="fizalizacaoDoPedido.php" method="get">
 
-    <div class="produtos">
+    <form action="fizalizacaoDoPedido.php" method="get">
+
+    <div class="conteiner">
 
 
               <!-- Linha 1 -->
@@ -71,7 +48,7 @@ require_once "../src/views/header_nav.php";
                 <!-- Produto 1 -->
                 <div class="produto">
                     <div class="foto">
-                        <img class="img-produto" src="assets/img/item1.png" alt="Canecas Personalizadas">
+                        <img class="img-produto" src="assets/img/Caneca_One_Piec.png" alt="Canecas Personalizadas">
                     </div>
                     <div class="nome-produto">
                         Five Stars Canecas Personalizadas!
@@ -82,11 +59,9 @@ require_once "../src/views/header_nav.php";
                     <div class="preco-produto">
                         R$ 100,00 
                     </div>
-                    
-                    <button class="btn btn-outline-light" type="fizalizacaoDoPedido" name="produtos[]" value=" Caneca One Piec">
+                    <button class="btn btn-outline-light" type="checkbox" name="produtos[]" value=" Caneca_One_Piec">
                         Comprar >>>
                     </button>
-                    
                 </div>
             </div>
 
@@ -94,7 +69,7 @@ require_once "../src/views/header_nav.php";
                 <!-- Produto 2 -->
                 <div class="produto">
                     <div class="foto">
-                        <img class="img-produto" src="assets/img/item2.png" alt="Canecas Personalizadas">
+                        <img class="img-produto" src="assets/img/Caneca_Melhor_Pai.png" alt="Canecas Personalizadas">
                     </div>
                     <div class="nome-produto">
                     Five Stars Canecas Personalizadas!
@@ -105,7 +80,7 @@ require_once "../src/views/header_nav.php";
                     <div class="preco-produto">
                         R$ 99,99
                     </div>
-                    <button class="btn btn-outline-light" type="fizalizacaoDoPedido" name="produtos[]" value=" Caneca Personalizada do Melhor Pai ">
+                    <button class="btn btn-outline-light" type="checkbox" name="produtos[]" value=" Caneca Personalizada do Melhor Pai ">
                         Comprar >>>
                     </button>
                 </div>
@@ -115,7 +90,7 @@ require_once "../src/views/header_nav.php";
                 <!-- Produto 3 -->
                 <div class="produto">
                     <div class="foto">
-                        <img class="img-produto" src="assets/img/item3.png" alt="Canecas Personalizadas">
+                        <img class="img-produto" src="assets/img/Caneca_No_Coffee_No_Forcee.png" alt="Canecas Personalizadas">
                     </div>
                     <div class="nome-produto">
                     Five Stars Canecas Personalizadas!
@@ -136,7 +111,7 @@ require_once "../src/views/header_nav.php";
                 <!-- Produto 4 -->
                 <div class="produto">
                     <div class="foto">
-                        <img class="img-produto" src="assets/img/item4.png" alt="Canecas Personalizadas">
+                        <img class="img-produto" src="assets/img/CANECA_HOMER_SIMPSONS_SPAC.png" alt="Canecas Personalizadas">
                     </div>
                     <div class="nome-produto">
                     Five Stars Canecas Personalizadas!
@@ -164,7 +139,7 @@ require_once "../src/views/header_nav.php";
                 <!-- Produto 5 -->
                 <div class="produto">
                     <div class="foto">
-                        <img class="img-produto" src="assets/img/item5.png" alt="Canecas Personalizadas">
+                        <img class="img-produto" src="assets/img/caneca_programador.png" alt="Canecas Personalizadas">
                     </div>
                     <div class="nome-produto">
                         Five Stars Canecas Personalizadas!
@@ -185,7 +160,7 @@ require_once "../src/views/header_nav.php";
                 <!-- Produto 8 -->
                 <div class="produto">
                     <div class="foto">
-                        <img class="img-produto" src="assets/img/item6.png" alt="Canecas Personalizadas">
+                        <img class="img-produto" src="assets/img/caneca_breaking.png" alt="Canecas Personalizadas">
                     </div>
                     <div class="nome-produto">
                     Five Stars Canecas Personalizadas!
@@ -206,7 +181,7 @@ require_once "../src/views/header_nav.php";
                 <!-- Produto 7 -->
                 <div class="produto">
                     <div class="foto">
-                        <img class="img-produto" src="assets/img/item7.png" alt="Canecas Personalizadas">
+                        <img class="img-produto" src="assets/img/Caneca_Gamer.png" alt="Canecas Personalizadas">
                     </div>
                     <div class="nome-produto">
                     Five Stars Canecas Personalizadas!
@@ -227,7 +202,7 @@ require_once "../src/views/header_nav.php";
                 <!-- Produto 6 -->
                 <div class="produto">
                     <div class="foto">
-                        <img class="img-produto" src="assets/img/item8.png" alt="Canecas Personalizadas">
+                        <img class="img-produto" src="assets/img/Caneca_Albert_Einstei.png" alt="Canecas Personalizadas">
                     </div>
                     <div class="nome-produto">
                     Five Stars Canecas Personalizadas!

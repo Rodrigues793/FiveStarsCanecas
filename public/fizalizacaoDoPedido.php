@@ -1,6 +1,5 @@
 <?php
 
-use Database\Database;
 use Model\Pedido;
 
     require_once '../vendor/autoload.php';
@@ -31,8 +30,6 @@ use Model\Pedido;
         $ped->entrega = null;
     }
 
-    $listaItens = null;
-
 ?>
 
 
@@ -52,11 +49,7 @@ use Model\Pedido;
         <?php foreach($ped->itens as $i) : ?>
             <!-- nossa estrutura html se repetira dependendo do numero de itens da lista -->
         <h3 style="font-family: 'Courier New', Courier, monospace;">
-            <?php
-                echo $i;
-                $listaItens .= $i . ' ,'; 
-             
-             ?>
+            <?= $i ?>
         </h3><hr>
         <?php endforeach ?>
     <?php else : 
@@ -74,21 +67,5 @@ use Model\Pedido;
             <?= $ped->entrega ?>
     </h3><hr>
 
-    <?php
-/////////////////////////////////////////////////////////////////////////////////////////////
-// require_once "../src/model/Database.php";
-//$db = new Database();
-
-// $db->insert(
-  //  "INSERT INTO pedidos(data_hora, itens, qtde, pgto, entrega)
-  //  VALUES('$ped->dataHora' , '$listaItens' , $ped->qtde , '$ped->pgto' , '$ped->entrega'); "
-// );
-//////////////////////////////////////////////////////////////////////////////////////////////
-?>
-
-
-    
-
 </body>
 </html>
-<?php require_once "../src/views/footer.php"; ?>

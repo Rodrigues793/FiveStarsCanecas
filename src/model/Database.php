@@ -85,7 +85,7 @@ class Database {
                 $result = $myExecute->execute($parameters);
             } else {
                 $myExecute = $this->connection->prepare($sql);
-                $result = $myExecute->execute();
+                // $result = $myExecute->execute();
             }
         } catch (PDOException $error) {
             var_dump($error);
@@ -94,7 +94,7 @@ class Database {
 
         $this->disconnect();
 
-        return $result;
+        // return $result;
    }
 
    //////////////////////////////////////////////////////////////////////////////

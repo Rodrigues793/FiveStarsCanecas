@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="assets/css/styleLogin.css">
     <!-- Produto -->
     <link rel="stylesheet" href="assets/css/styleProduto.css">
-    <link rel="stylesheet" href="assets/css/styleFooter.css">
     <!-- Scripts -->
  
 

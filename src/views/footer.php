@@ -1,6 +1,3 @@
-<footer>
-  Todos os direitos reservados - <?= date("Y") ?>
-</footer>
-
+<script src="assets/js/scrips.js"></script>
 </body>
 </html>
